@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>עולם הכרישים</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #002f4b, #005e7a);
+      color: white;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: #00394d;
+    }
+    .tab {
+      padding: 14px 20px;
+      cursor: pointer;
+      color: white;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+    .tab:hover, .tab.active {
+      border-bottom: 3px solid #00d4ff;
+    }
+    .content {
+      display: none;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .content.active {
+      display: block;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    h2 {
+      color: #00d4ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(0)">רקע כללי</div>
+    <div class="tab" onclick="showTab(1)">מינים</div>
+    <div class="tab" onclick="showTab(2)">חושים</div>
+    <div class="tab" onclick="showTab(3)">איך הם צדים</div>
+    <div class="tab" onclick="showTab(4)">המגאלודון</div>
+    <div class="tab" onclick="showTab(5)">שאלות</div>
+  </div>
+
+  <div class="content active">
+    <h2>רקע כללי</h2>
+    <p>הכרישים הם דגים טורפים עם שלד סחוסי, שחיים באוקיינוסים כבר למעלה מ־400 מיליון שנה. הם קיימים הרבה לפני הדינוזאורים!</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/White_shark.jpg/800px-White_shark.jpg">
+  </div>
+
+  <div class="content">
+    <h2>מינים</h2>
+    <p>יש מעל 500 מינים שונים של כרישים! חלקם קטנים מאוד, ואחרים כמו כריש הלווייתן עצומים בגודלם אך אינם טורפים בני אדם.</p>
+  </div>
+
+  <div class="content">
+    <h2>חושים</h2>
+    <ul>
+      <li><strong>ריח:</strong> כרישים מסוגלים להריח טיפה אחת של דם במים למרחק של קילומטרים.</li>
+      <li><strong>ראייה:</strong> ראייה מותאמת לאור חלש – רואים טוב גם בלילה.</li>
+      <li><strong>קולטני חשמל (Electroreception):</strong> חיישנים מיוחדים שמזהים שדות חשמליים של יצורים אחרים.</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>איך הם צדים?</h2>
+    <p>הם משתמשים בחושים החזקים שלהם כדי לאתר טרף, לרוב ממארב. הם יכולים לשחות במהירות עצומה ולתקוף בדיוק מירבי.</p>
+  </div>
+
+  <div class="content">
+    <h2>המגאלודון</h2>
+    <p>המגאלודון היה אחד הכרישים הגדולים שחיו אי פעם – באורך של עד 20 מטר! הוא נחשב לאחד הטורפים הקטלניים בהיסטוריה.</p>
+  </div>
+
+  <div class="content">
+    <h2>שאלות</h2>
+    <ul>
+      <li>כמה מינים של כרישים קיימים כיום?</li>
+      <li>מהם שלושת החושים המרכזיים של הכריש?</li>
+      <li>מהו המגאלודון?</li>
+    </ul>
+  </div>
+
+  <script>
+    function showTab(index) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.content');
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+        contents[i].classList.toggle('active', i === index);
+      });
+    }
+  </script>
+
+</body>
+</html>
